@@ -27,6 +27,13 @@ def pdf_to_text(pdf_path: str) -> str:
     return text.strip()
 
 
+def docx_to_text(docx_path: str) -> str:
+    """Word (.docx) dosyasını metne çevir."""
+    from docx import Document
+    doc = Document(docx_path)
+    return "\n".join(p.text for p in doc.paragraphs).strip()
+
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok"})
@@ -53,18 +60,25 @@ def analyze():
         if f.filename == "":
             return jsonify({"error": "Dosya seçilmedi"}), 400
         suffix = Path(f.filename).suffix.lower()
+        import tempfile
         if suffix == ".pdf":
-            import tempfile
             with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
                 f.save(tmp.name)
                 try:
                     cv_text = pdf_to_text(tmp.name)
                 finally:
                     os.unlink(tmp.name)
+        elif suffix == ".docx":
+            with tempfile.NamedTemporaryFile(suffix=".docx", delete=False) as tmp:
+                f.save(tmp.name)
+                try:
+                    cv_text = docx_to_text(tmp.name)
+                finally:
+                    os.unlink(tmp.name)
         elif suffix == ".txt":
             cv_text = f.read().decode("utf-8", errors="replace").strip()
         else:
-            return jsonify({"error": "Sadece PDF veya TXT destekleniyor"}), 400
+            return jsonify({"error": "Sadece PDF, Word (.docx) veya TXT destekleniyor"}), 400
 
     if not cv_text:
         return jsonify({"error": "CV metni boş veya okunamadı"}), 400

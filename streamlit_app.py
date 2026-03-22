@@ -13,7 +13,7 @@ from core.analyzer import analyze_cv_github
 
 
 def pdf_to_text(uploaded_file) -> str:
-    """Yüklenen PDF'den metin çıkar (BytesIO kullanır, geçici dosya yok)."""
+    """Yüklenen PDF'den metin çıkar."""
     import io
     with pdfplumber.open(io.BytesIO(uploaded_file.getvalue())) as pdf:
         text = ""
@@ -22,6 +22,14 @@ def pdf_to_text(uploaded_file) -> str:
             if t:
                 text += t + "\n"
         return text.strip()
+
+
+def docx_to_text(uploaded_file) -> str:
+    """Yüklenen Word (.docx) dosyasından metin çıkar."""
+    import io
+    from docx import Document
+    doc = Document(io.BytesIO(uploaded_file.getvalue()))
+    return "\n".join(p.text for p in doc.paragraphs).strip()
 
 
 st.set_page_config(
@@ -36,21 +44,23 @@ st.caption("CV ve GitHub profilinizi analiz ederek bir uygunluk skoru üretir.")
 # Form dışında file_uploader - Streamlit form içinde submit butonu sorununu önler
 cv_input = st.radio(
     "CV girişi",
-    ["Dosya yükle (PDF/TXT)", "Metin yapıştır"],
+    ["Dosya yükle (PDF / Word / TXT)", "Metin yapıştır"],
     horizontal=True,
 )
 cv_text = ""
 cv_file = None
-if cv_input == "Dosya yükle (PDF/TXT)":
+if cv_input == "Dosya yükle (PDF / Word / TXT)":
     cv_file = st.file_uploader(
         "CV dosyası",
-        type=["pdf", "txt"],
-        help="PDF veya metin dosyası yükleyin",
+        type=["pdf", "docx", "txt"],
+        help="PDF, Word (.docx) veya metin dosyası yükleyin",
     )
     if cv_file:
         suffix = cv_file.name.lower().split(".")[-1]
         if suffix == "pdf":
             cv_text = pdf_to_text(cv_file)
+        elif suffix == "docx":
+            cv_text = docx_to_text(cv_file)
         else:
             cv_text = cv_file.read().decode("utf-8", errors="replace").strip()
 else:
