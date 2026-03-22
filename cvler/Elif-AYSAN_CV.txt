@@ -1,0 +1,86 @@
+Elif AYSAN
+elifaysan@hotmail.com +90 (546) 260 3808 İstanbul
+linkedin.com/in/elifaysan
+github: elifaysan
+Profile
+I am a 4th-year Information Systems Engineering student with a strong interest in technology and software
+development. Through my internships and projects, I have gained hands-on experience in form design, SQL
+database management, workflow automation, and artificial intelligence applications. I have worked on
+various projects including Al-powered mobile applications, exchange rate prediction models, game
+development with Unity, and web systems. I am ready to improve myself in software engineering and take part
+in innovative projects.
+Professional Experience
+Software Development Intern, Anadolu Sağlık Merkezi
+Developed features for a Flutter-based mobile application enabling doctors to record and manage voice
+reports. Implemented real-time audio recording, secure storage, and backend API integration for Al-powered
+speech-to-text processing.
+Intern, Aksoy Çözüm
+EBA Solution
+Database structures were designed, managed, and optimized to ensure accurate and efficient data processing.
+Various data queries were created and analyzed, and SQL commands were effectively applied to enhance data
+reliability and support development processes focused on improving overall system performance.
+Form Design and User Interface Development: User-friendly forms were designed and implemented to
+streamline business processes and improve overall usability. Form functionalities and interface components
+were enhanced to support efficient workflow operations. Validation mechanisms were integrated, enabling
+process automation and contributing to more consistent and optimized workflow execution.
+Education
+Information Systems Engineering, Kocaeli Üniversitesi 2022 – Present
+Menderes Anadolu Lisesi 2018 – 2020
+Özay Gönlüm Fen Lisesi 2016 – 2018
+Skills
+C# SQL
+eBA (Business Process Management System) HTML/CSS
+Java Flutter
+Languages
+English
+A2
+Projects
+AI-Based Candidate Evaluation System Integrating CV & GitHub Data (TÜBİTAK 2209A Stage – 2025)
+Developing an AI-based matching system that analyzes CVs and GitHub activity together to evaluate software
+developer suitability using NLP and repository-level code insights.
+AI-Powered Mobile Medical Report Automation
+This project was developed to improve doctorsʼ efficiency in preparing medical reports by integrating voice
+technology into a mobile application. Real-time audio recording was implemented in Flutter, secure local
+storage was configured for managing voice files, and a backend API was integrated to enable AI-based speech-
+to-text transcription. These implementations streamlined medical documentation and demonstrated the
+practical value of AI-assisted healthcare solutions.
+Maze Game
+This project was developed as my first game in Unity and marked the beginning of my game development
+journey. Unityʼs physics engine, character control, and camera movement systems were implemented to build
+the core gameplay. Through this process, my understanding of game logic improved, and my C# programming
+skills were strengthened. This experience encouraged me to continue developing myself and work toward
+more advanced game projects.
+Gym Automation System
+This project was developed as a gym management system using C# and Microsoft SQL Server to streamline
+membership management, payment tracking, and appointment scheduling. The application was built in the
+Visual Studio environment, where SQL queries were applied to ensure efficient and accurate data
+management tailored to user needs.
+Local Product Sales Website
+This project was developed as a local product sales website using HTML and CSS to support the online sale of
+regional goods. A modern and user-friendly interface was designed to enhance the shopping experience.
+Through this work, core e-commerce functionalities and fundamental web design principles were learned and
+applied.
+AI Model for USD/TRY Prediction
+This project was developed to build an AI model capable of predicting USD/TRY exchange rates. Five
+transformer-based models were evaluated to determine which provided the most effective prediction
+performance. Exchange rate data was collected from a specific source, processed through time-series analysis,
+and various machine learning techniques were applied to compare and validate the results.
+Club Experience
+R&D and Innovation Club.
+Actively served on the management team of the R&D and Innovation Club.
+•
+Utilized strong social and persuasion skills to recruit new members.
+•
+Organized training programs to raise awareness about the software industry.
+•
+Invited Trendyolʼs developer team to an event, connecting participants with industry professionals.
+•
+Dance Club
+Actively participated in the Dance Club with a focus on discipline, motivation, and physical well-being.
+•
+Certificates
+C# Programming Language Algorithms and Data Structures Design Thinking Focused
+(Udemy) Advanced Level (BTK) Ideathon
+Turkish Airlines – IDEALIST
+Innovation Idea Competition
+Winner

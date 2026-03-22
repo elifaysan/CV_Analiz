@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.venv/
+venv/
+env/
+
+# Ortam
+.env
+.env.local
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Veri (büyük/indirilebilir)
+resume-dataset/
+resume-dataset.zip
+
+# FAISS model cache
+*.index
+*.bin
