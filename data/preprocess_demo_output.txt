@@ -1,0 +1,33 @@
+============================================================
+1. HAM METIN (ilk 800 karakter)
+============================================================
+Elif AYSAN
+elifaysan@hotmail.com +90 (546) 260 3808 İstanbul
+linkedin.com/in/elifaysan
+github: elifaysan
+Profile
+I am a 4th-year Information Systems Engineering student with a strong interest in technology and software
+development. Through my internships and projects, I have gained hands-on experience in form design, SQL
+database management, workflow automation, and artificial intelligence applications. I have worked on
+various projects including Al-powered mobile applications, exchange rate prediction models, game
+development with Unity, and web systems. I am ready to improve myself in software engineering and take part
+in innovative projects.
+Professional Experience
+Software Development Intern, Anadolu Sağlık Merkezi
+Developed features for a Flutter-based mobile application enabling doct
+
+============================================================
+2. TEMIZLENMIS (normalize + lowercase)
+============================================================
+elif aysan elifaysan@hotmail.com +90 (546) 260 3808 i̇stanbul linkedin.com/in/elifaysan github: elifaysan profile i am a 4th-year information systems engineering student with a strong interest in technology and software development. through my internships and projects, i have gained hands-on experience in form design, sql database management, workflow automation, and artificial intelligence applications. i have worked on various projects including al-powered mobile applications, exchange rate prediction models, game development with unity, and web systems. i am ready to improve myself in software engineering and take part in innovative projects. professional experience software development intern, anadolu sağlık merkezi developed features for a flutter-based mobile application enabling doc
+
+============================================================
+3. STOPWORD CIKARILMIS - Anahtar kelimeler
+============================================================
+Benzersiz kelimeler: 260, 3808, 4th, 546, 90, al, am, anadolu, application, applications, artificial, automation, aysan, based, com, database, design, developed, development, doct, elif, elifaysan, enabling, engineering, exchange, experience, features, flutter, form, gained, game, github, hands, hotmail, improve, including, information, innovative, intelligence, interest, intern, internships, linkedin, management, merkezi, mobile, models, my, myself, part
+Toplam: 73 kelime
+
+============================================================
+4. TAM TEMIZLIK (punct + stopword)
+============================================================
+260 3808 4th 546 90 al am anadolu application applications artificial automation aysan based com database design developed development doct elif elifaysan enabling engineering exchange experience features flutter form gained game github hands hotmail improve including information innovative intelligence interest intern internships linkedin management merkezi mobile models my myself part powered prediction professional profile projects rate ready sağlık software sql stanbul strong student systems take technology through unity various web worked workflow year

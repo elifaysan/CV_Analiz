@@ -75,6 +75,8 @@ def analyze_cv_github(
     github_json: Optional[dict] = None,
     cv_weight: float = 0.4,
     gh_weight: float = 0.6,
+    use_rag: bool = False,
+    llm_provider: str = "auto",
 ) -> dict:
     """
     CV metni + (opsiyonel) GitHub ile tam analiz.
@@ -86,13 +88,15 @@ def analyze_cv_github(
     gh_result = None
     gh_error = None
     resolved_username = None
+    gh_raw = None  # RAG için ham GitHub JSON
     if github_json:
+        gh_raw = github_json
         gh_result = calculate_github_score(github_json)
         resolved_username = github_json.get("login")
     elif github_username:
         try:
-            user_data = fetch_github_data(github_username)
-            gh_result = calculate_github_score(user_data)
+            gh_raw = fetch_github_data(github_username)
+            gh_result = calculate_github_score(gh_raw)
             resolved_username = github_username
         except Exception as e:
             gh_error = str(e)
@@ -100,8 +104,8 @@ def analyze_cv_github(
         gh_username_from_cv = extract_github_username(cv_text)
         if gh_username_from_cv:
             try:
-                user_data = fetch_github_data(gh_username_from_cv)
-                gh_result = calculate_github_score(user_data)
+                gh_raw = fetch_github_data(gh_username_from_cv)
+                gh_result = calculate_github_score(gh_raw)
                 resolved_username = gh_username_from_cv
             except Exception as e:
                 gh_error = str(e)
@@ -113,7 +117,7 @@ def analyze_cv_github(
 
     explanation = build_full_explanation(cv_result, gh_result, fusion, cv_weight, gh_weight)
 
-    return {
+    result = {
         "cv_score": cv_score,
         "github_score": gh_score if gh_result else None,
         "fusion_score": fusion,
@@ -123,3 +127,23 @@ def analyze_cv_github(
         "github_username": resolved_username,
         "error": gh_error,
     }
+
+    if use_rag:
+        try:
+            from .rag import rag_assessment
+            rag_text, rag_err = rag_assessment(
+                cv_text=cv_text,
+                github_data=gh_raw,
+                cv_score=cv_score,
+                gh_score=gh_score if gh_result else None,
+                fusion_score=fusion,
+                matched_skills=cv_result.get("matched_skills"),
+                provider=llm_provider,
+            )
+            result["rag_assessment"] = rag_text if rag_err is None else None
+            result["rag_error"] = rag_err
+        except Exception as e:
+            result["rag_assessment"] = None
+            result["rag_error"] = str(e)
+
+    return result

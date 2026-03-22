@@ -2,18 +2,26 @@
   "login": "elifaysan",
   "name": "Elif AYSAN",
   "bio": null,
-  "public_repos": 8,
+  "public_repos": 9,
   "followers": 2,
   "following": 2,
   "blog": "",
   "location": null,
   "languages": [
-    "C#",
+    "HTML",
     "PHP",
     "Python",
-    "HTML"
+    "C#"
   ],
   "repos": [
+    {
+      "name": "CV_Analiz",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "has_readme": false
+    },
     {
       "name": "elifaysan.github.io",
       "description": null,
